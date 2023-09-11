@@ -1,9 +1,11 @@
 $dark-primary: #FC4747;
 $dark-background: #10141E;
+$dark-ghost-background: #363637;
 $dark-foreground: #161D2F;
 $dark-foreground-object: #5A698F;
 $dark-text: #FFFFFF;
 $dark-ghost-text: #a5a5a5;
+$dark-disabled-background: #4c4c4c;
 
 $dark-palette: (
     background: (
@@ -13,6 +15,8 @@ $dark-palette: (
         layout-object-active: $dark-text,
         primary: $dark-primary,
         active: $dark-text,
+        ghost: $dark-ghost-background,
+        disabled: $dark-disabled-background,
     ),
     line: (
         base: $dark-foreground-object,

@@ -1,0 +1,25 @@
+@import '~/components/Theme/Theme.module.scss'; 
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-container {
+    display: inline-block;
+}
+
+.loading-spinner {
+    animation: spinner 1.5s linear infinite;
+}
+
+@include themify() {
+    .loading-spinner {
+        border-color: themed-color('background', 'active');
+        border-top-color: themed-color('background', 'ghost');
+    }
+}
