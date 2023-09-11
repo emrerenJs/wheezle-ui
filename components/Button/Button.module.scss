@@ -1,0 +1,53 @@
+@import '~/components/Theme/Theme.module.scss'; 
+
+$height: 48px;
+$radius: 6px;
+
+@mixin button-reset() {
+    button {
+        background-color: transparent;
+        border: none;
+    }
+}
+
+.button-root {
+    @include button-reset;
+
+    button {
+        width: 100%;
+        cursor: pointer;
+        height: $height;
+        border-radius: $radius;
+        transition: 200ms all;
+        font-size: 15px;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 12px;
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: red;
+        }
+    }
+}
+
+@include themify() {
+    .button-root {
+        button {
+            background-color: themed-color('background', 'primary');
+            color: themed-color('text');
+        
+            &:hover {
+                background-color: themed-color('background', 'active');
+                color: themed-color('text', 'active');
+            }
+        
+            &:disabled {
+                background-color: themed-color('background', 'disabled');
+                color: themed-color('text');
+            }
+        }
+    }
+}
