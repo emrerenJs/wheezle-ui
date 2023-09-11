@@ -1,0 +1,30 @@
+$dark-primary: #FC4747;
+$dark-background: #10141E;
+$dark-foreground: #161D2F;
+$dark-foreground-object: #5A698F;
+$dark-text: #FFFFFF;
+$dark-ghost-text: #a5a5a5;
+
+$dark-palette: (
+    background: (
+        base: $dark-background,
+        layout: $dark-foreground,
+        layout-object: $dark-foreground-object,
+        layout-object-active: $dark-text,
+        primary: $dark-primary,
+        active: $dark-text,
+    ),
+    line: (
+        base: $dark-foreground-object,
+        active: $dark-text,
+        error: $dark-primary,
+        cursor: $dark-primary,
+    ),
+    text: (
+        base: $dark-text,
+        primary: $dark-text,
+        active: $dark-background,
+        error: $dark-primary,
+        ghost: $dark-ghost-text
+    ),
+)

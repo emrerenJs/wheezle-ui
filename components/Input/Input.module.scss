@@ -1,0 +1,88 @@
+@import '~/components/Theme/Theme.module.scss'; 
+
+$height: 34px;
+$border: 1px;
+
+@mixin input-reset() {
+    input {
+        border: none;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        width: 100%;
+        height: fit-content;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.input-root {
+    position: relative;
+}
+
+.icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    height: 19px;
+}
+
+.input {
+    @include input-reset();
+    height: $height - $border;
+    border-bottom: $border solid;
+    cursor: text;
+    display: flex;
+    column-gap: 12px;
+
+    input {
+        font-size: 15px;
+        font-weight: 300;
+    }
+}
+
+.error {
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+
+@include themify() {
+    .input {
+        border-color: themed-color('line');
+
+        .icon {
+            color: themed-color('line');
+        }
+
+        &:has(input:focus) {
+            border-color: themed-color('line', 'active');
+            
+            .icon {
+                color: themed-color('text');
+            }
+        }
+
+        input {
+            color: themed-color('text');
+            caret-color: themed-color('line', 'cursor');
+        }
+    }
+
+    .error {
+        color: themed-color('text', 'error');
+    }
+
+    .input-root:has(.error) {
+        .input {
+            border-color: themed-color('line', 'error');
+
+            .icon {
+                color: themed-color('text', 'error');
+            }
+        }
+    }
+}

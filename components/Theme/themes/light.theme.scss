@@ -1,0 +1,27 @@
+$light-primary: #FC4747;
+$light-background: #10141E;
+$light-foreground: #161D2F;
+$light-foreground-object: #5A698F;
+$light-text: #FFFFFF;
+
+$light-palette: (
+    background: (
+        base: $light-background,
+        layout: $light-foreground,
+        layout-object: $light-foreground-object,
+        layout-object-active: $light-text,
+        primary: $light-primary,
+        active: $light-text,
+    ),
+    line: (
+        base: $light-foreground,
+        active: $light-text,
+        error: $light-primary,
+    ),
+    text: (
+        base: $light-text,
+        primary: $light-text,
+        active: $light-background,
+        error: $light-primary
+    ),
+)

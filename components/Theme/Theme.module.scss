@@ -1,0 +1,25 @@
+@import './themes/dark.theme.scss';
+@import './themes/light.theme.scss';
+
+$themes: (
+    dark: $dark-palette, 
+    light: $light-palette
+);
+
+@mixin themify() {
+  @each $theme-key, $palette in $themes {
+    :global .#{$theme-key} {
+      $themed-palette: $palette !global;
+
+      :local {
+        @content;
+      }
+
+      $themed-palette: null !global;
+    }
+  }
+}
+
+@function themed-color($key, $variant: 'base') {
+  @return map-get(map-get($themed-palette, $key), $variant);
+}
