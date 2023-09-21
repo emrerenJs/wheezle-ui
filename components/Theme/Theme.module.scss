@@ -20,6 +20,18 @@ $themes: (
   }
 }
 
+@mixin themify-unmoduled-css() {
+  @each $theme-key, $palette in $themes {
+    .#{$theme-key} {
+      $themed-palette: $palette !global;
+
+      @content;
+
+      $themed-palette: null !global;
+    }
+  }
+}
+
 @function themed-color($key, $variant: 'base') {
   @return map-get(map-get($themed-palette, $key), $variant);
 }

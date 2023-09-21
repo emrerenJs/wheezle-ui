@@ -1,8 +1,11 @@
 $light-primary: #FC4747;
 $light-background: #10141E;
+$light-ghost-background: #363637;
 $light-foreground: #161D2F;
 $light-foreground-object: #5A698F;
 $light-text: #FFFFFF;
+$light-ghost-text: #a5a5a5;
+$light-disabled-background: #4c4c4c;
 
 $light-palette: (
     background: (
@@ -12,16 +15,20 @@ $light-palette: (
         layout-object-active: $light-text,
         primary: $light-primary,
         active: $light-text,
+        ghost: $light-ghost-background,
+        disabled: $light-disabled-background,
     ),
     line: (
-        base: $light-foreground,
+        base: $light-foreground-object,
         active: $light-text,
         error: $light-primary,
+        cursor: $light-primary,
     ),
     text: (
         base: $light-text,
         primary: $light-text,
         active: $light-background,
-        error: $light-primary
+        error: $light-primary,
+        ghost: $light-ghost-text
     ),
 )

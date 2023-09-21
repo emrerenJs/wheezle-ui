@@ -26,7 +26,8 @@ $dark-palette: (
     ),
     text: (
         base: $dark-text,
-        primary: $dark-text,
+        primary: $dark-primary,
+        foreground: $dark-text,
         active: $dark-background,
         error: $dark-primary,
         ghost: $dark-ghost-text
