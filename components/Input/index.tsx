@@ -1,6 +1,7 @@
 import { forwardRef, useImperativeHandle, useRef } from "react";
 import { InputProps } from "./Input.types";
 import style from './Input.module.scss';
+import { Typography } from "../Typography";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     const {error, icon, ...inputProps} = props;
@@ -17,7 +18,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
                 { icon && <div className={style['icon']}>{icon}</div> }
                     <input {...inputProps} ref={inputRef} />
                 </div>
-                { error && (<div className={style['error']}> { error } </div>) }
+                { error && (<div className={style['error']}> <Typography variant='body-s'>{ error }</Typography> </div>) }
         </div>
     )
 });

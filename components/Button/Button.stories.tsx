@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '.';
-import { TbMail } from 'react-icons/tb';
+import { Typography } from '../Typography';
 
 const meta: Meta<typeof Button> = {
     title: "Button",
@@ -12,12 +12,12 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
-    render: () => <Button> Click me </Button>,
+    render: () => <Button> <Typography>Click me</Typography> </Button>,
 }
 
 export const Loading: Story = {
-    render: () => <Button loading> Click me </Button>,
+    render: () => <Button loading> <Typography>Click me</Typography> </Button>,
 }
 export const Disabled: Story = {
-    render: () => <Button disabled> Click me </Button>,
+    render: () => <Button disabled> <Typography>Click me</Typography> </Button>,
 }
